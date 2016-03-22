@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制div属性</title>
+    <style>
+        div{width: 960px; margin: 0 auto; text-align: center;}
+        #draw{width: 100px;height: 100px;background-color: cadetblue;display: block;
+                margin:20px auto auto auto;}
+    </style>
+    <script  type="text/javascript">
+        window.onload = function(){
+            var things = document.getElementById("outer");
+            var reg = document.getElementById("draw");
+            things.addEventListener("click", function(){
+                switch (event.target.value){
+                    case "变宽":
+                        reg.style.width = "200px";
+                        break;
+                    case "变高":
+                        reg.style.height = "200px";
+                        break;
+                    case "变色":
+                        reg.style.backgroundColor = "#FFC0CB";
+                        break;
+                    case "隐藏":
+                        reg.style.display = "none";
+                        break;
+                    case "重置":
+                        reg.style.cssText = "";
+                        break;
+                }
+            }, false)
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <input type="button" value="变宽">
+    <input type="button" value="变高">
+    <input type="button" value="变色">
+    <input type="button" value="隐藏">
+    <input type="button" value="重置">
+    <div id="draw"></div>
+</div>
+</body>
+</html>
